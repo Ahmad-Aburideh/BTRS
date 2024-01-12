@@ -1,0 +1,15 @@
+﻿@model BTRS.Models.methodSelection
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<form method="post" action="@Url.Action("SelectMethod", "passenger")">
+    <label>Select your method :</label>
+    <select asp-for="SelectedMethod">
+        <option value="SignUp">SignUp</option>
+        <option value="Login">Login</option>
+    </select>
+    <button type="submit">Submit</button>
+</form>

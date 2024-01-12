@@ -1,0 +1,20 @@
+﻿@model BTRS.Models.administrator
+
+@using (Html.BeginForm("Login", "administrator", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        @Html.TextBoxFor(m => m.Username)
+    </div>
+
+    <div>
+        @Html.PasswordFor(m => m.Password)
+    </div>
+
+    <div>
+        <input type="submit" value="Login" />
+    </div>
+
+    @TempData["Msg"]
+}

@@ -1,0 +1,30 @@
+﻿@model BTRS.Models.administrator
+<form method="post">
+
+	<table>
+		<tr>
+			<td> @Html.LabelFor(m=>m.AdminID) </td> <td> @Html.TextBoxFor(m=>m.AdminID , new {  @type = "number",@required = "required" })</td>
+		</tr>
+
+		<tr>
+			<td> @Html.LabelFor(m=>m.Username) </td> <td> @Html.TextBoxFor(m=>m.Username,new { @required = "required" })</td>
+		</tr>
+		
+		<tr>
+			<td> @Html.LabelFor(m=>m.Password) </td> <td> @Html.PasswordFor(m=>m.Password,new { @required = "required" })</td>
+		</tr>
+		
+		<tr>
+			<td> @Html.LabelFor(m=>m.FullName) </td> <td> @Html.TextBoxFor(m=>m.FullName,new { @required = "required" })</td>
+		</tr>
+
+	
+
+		<div class="form-group">
+                <input type="submit" value="Signup" class="btn btn-primary" />
+        </div>
+	</table>
+
+	@TempData["Msg"]
+
+</Form>

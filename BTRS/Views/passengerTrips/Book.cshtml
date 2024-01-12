@@ -1,0 +1,29 @@
+﻿@model BTRS.Models.trip
+
+@{
+    ViewData["Title"] = "Book";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Book Your Trip</h2>
+
+<div>
+    <h4>Book a Trip</h4>
+    <hr />
+
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Destination)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Destination)
+        </dd>
+
+        <!-- Add other properties as needed -->
+
+    </dl>
+
+    <div class="form-group">
+        <a asp-action="Book" asp-controller="PassengerTrips" class="btn btn-primary">Confirm Booking</a>
+    </div>
+</div>

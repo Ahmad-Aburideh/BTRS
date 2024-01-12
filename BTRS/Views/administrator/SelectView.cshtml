@@ -1,0 +1,16 @@
+﻿@model BTRS.Models.ViewSelection
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+<form method="post" asp-action="SelectView">
+    <label>Select What do you want to Access:</label>
+    <select asp-for="SelectedView">
+        <option value="Trips">Trips</option>
+        <option value="Bus">Bus</option>
+    </select>
+    <button type="submit">Submit</button>
+</form>
