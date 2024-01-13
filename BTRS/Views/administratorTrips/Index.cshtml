@@ -3,8 +3,65 @@
 @{
     ViewData["Title"] = "Index";
 }
+<style>
 
-<h1>Index</h1>
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+        .table th, .table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .table th {
+            background-color: cadetblue;
+        }
+
+        .table a {
+            color: #007bff; 
+            text-decoration: none;
+        }
+
+            .table a:hover {
+                text-decoration: underline;
+            }
+
+</style>
+<style>
+
+
+    .table a.details-link,
+    .table a.delete-link, 
+    .table a.edit-link {
+        display: inline-block;
+        padding: 6px 12px;
+        margin-right: 5px;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+
+    .table a.details-link {
+        background-color: cadetblue;
+    }
+
+    .table a.edit-link {
+        background-color: cadetblue;
+    }
+    .table a.delete-link {
+        background-color: red;
+    }
+
+        
+
+</style>
+<h1>Administrator Trips</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -49,9 +106,9 @@
                 @Html.DisplayFor(modelItem => item.BusNumber)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.TripID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.TripID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.TripID">Delete</a>
+                    <a asp-action="Details" asp-route-id="@item.TripID" class="details-link">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@item.TripID" class="edit-link">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.TripID" class="delete-link">Delete</a> 
             </td>
         </tr>
 }

@@ -80,7 +80,10 @@ namespace BTRS.Controllers
            
             return RedirectToAction("Index", "bookingTrips");
         }
-
+        public IActionResult LogOut()
+        {
+            return RedirectToAction("passengerHome", "passenger");
+        }
 
 
     }

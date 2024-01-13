@@ -4,11 +4,52 @@
     ViewData["Title"] = "Book";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    h2 {
+        color: #007bff; 
+
+    h4 {
+        color: #007bff; 
+    }
+
+    hr {
+        border-color: #007bff; 
+
+    .row {
+        margin-top: 20px;
+    }
+
+    .col-sm-2 {
+        font-weight: bold;
+        color: #333; 
+    }
+
+    .col-sm-10 {
+        margin-bottom: 15px;
+    }
+
+    .form-group {
+        margin-top: 20px;
+    }
+
+    .btn-primary {
+        background-color: #007bff; 
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3; 
+        }
+</style>
 
 <h2>Book Your Trip</h2>
 
 <div>
-    <h4>Book a Trip</h4>
     <hr />
 
     <dl class="row">
@@ -19,7 +60,7 @@
             @Html.DisplayFor(model => model.Destination)
         </dd>
 
-        <!-- Add other properties as needed -->
+       
 
     </dl>
 

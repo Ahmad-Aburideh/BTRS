@@ -1,20 +1,99 @@
 ﻿@model BTRS.Models.passenger
 
+<style>
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f4f4f4;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+   
+    table {
+        width: 100%;
+    }
+
+    td {
+        padding: 10px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+    
+    input[type="submit"] {
+        background-color: green;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+   
+    input[type="submit"]:hover {
+            background-color: green;
+    }
+
+    
+
+    a.btn-signup {
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: darkblue;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    
+    a.btn-signup:hover {
+        background-color: darkblue;
+    }
+
+
+</style>
+
+
 @using (Html.BeginForm("Login", "passenger", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
+    <table>
+        <tr>
+            <td> @Html.LabelFor(m=>m.Username) </td>
+            <td> @Html.TextBoxFor(m=>m.Username,new { @required = "required" })</td>
+        </tr>
+        <tr>
+            <td> @Html.LabelFor(m=>m.Password) </td>
+            <td> @Html.PasswordFor(m=>m.Password,new { @required = "required" })</td>
+        </tr>
+    </table>
+     
 
-    <div>
-        @Html.TextBoxFor(m => m.Username)
+
+    <div class="form-group">
+        <input type="submit" value="Sign In" class="btn btn-primary" />
     </div>
 
-    <div>
-        @Html.PasswordFor(m => m.Password)
-    </div>
+    <br />
 
-    <div>
-        <input type="submit" value="Login" />
-    </div>
+    <a href="@Url.Action("SignUp", "passenger")" class="btn-signup">SignUp</a>
 
+    <br />
     @TempData["Msg"]
 }

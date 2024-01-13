@@ -1,4 +1,57 @@
 ﻿@model BTRS.Models.administrator
+<style>
+        /* Style for the form */
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Style for the table */
+        table {
+            width: 100%;
+        }
+
+        /* Style for table cells */
+        td {
+            padding: 10px;
+        }
+
+        /* Style for labels */
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        /* Style for textboxes and password inputs */
+        input[type="text"],
+        input[type="password"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        /* Style for the submit button */
+        input[type="submit"] {
+            background-color: #ff0000;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            /* Style for the submit button on hover */
+            input[type="submit"]:hover {
+                background-color: #ff0000;
+            }
+    </style>
 <form method="post">
 
 	<table>
@@ -20,11 +73,11 @@
 
 	
 
-		<div class="form-group">
+		
+	</table>
+    <div class="form-group">
                 <input type="submit" value="Signup" class="btn btn-primary" />
         </div>
-	</table>
-
 	@TempData["Msg"]
 
 </Form>

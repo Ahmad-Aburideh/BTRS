@@ -1,49 +1,114 @@
 ﻿@model BTRS.Models.passenger
-<form method="post">
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Style for the form */
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-	<table>
-		<tr>
-			<td> @Html.LabelFor(m=>m.PassengerID) </td> <td> @Html.TextBoxFor(m=>m.PassengerID,new { @type = "number", @required = "required" })</td>
-		</tr>
+        /* Style for the table */
+        table {
+            width: 100%;
+        }
 
-		<tr>
-			<td> @Html.LabelFor(m=>m.Name) </td> <td> @Html.TextBoxFor(m=>m.Name,new { @required = "required" })</td>
-		</tr>
-		
-		<tr>
-			<td> @Html.LabelFor(m=>m.EmailAddress) </td> <td> @Html.TextBoxFor(m=>m.EmailAddress,new { @required = "required" })</td>
-		</tr>
+        /* Style for table cells */
+        td {
+            padding: 10px;
+        }
 
-		<tr>
-			<td> @Html.LabelFor(m=>m.PhoneNumber) </td> <td> @Html.TextBoxFor(m=>m.PhoneNumber,new {  @type = "number",@required = "required" })</td>
-		</tr>
+        /* Style for labels */
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
 
-		<tr>
-			<td> @Html.LabelFor(m=>m.Password) </td> <td> @Html.PasswordFor(m=>m.Password,new { @required = "required" })</td>
-		</tr>
+        /* Style for textboxes and password inputs */
+        input[type="text"],
+        input[type="password"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        /* Style for the submit button */
+        input[type="submit"] {
+            background-color: darkblue;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            /* Style for the submit button on hover */
+            input[type="submit"]:hover {
+                background-color: darkblue;
+            }
+    </style>
+</head>
+<body>
+    <form method="post">
+        <table>
+            <tr>
+                <td> @Html.LabelFor(m=>m.PassengerID) </td>
+                <td> @Html.TextBoxFor(m=>m.PassengerID,new { @type = "number", @required = "required" })</td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m=>m.Name) </td>
+                <td> @Html.TextBoxFor(m=>m.Name,new { @required = "required" })</td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m=>m.EmailAddress) </td>
+                <td> @Html.TextBoxFor(m=>m.EmailAddress,new { @required = "required" })</td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m=>m.PhoneNumber) </td>
+                <td> @Html.TextBoxFor(m=>m.PhoneNumber,new {  @type = "number",@required = "required" })</td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m=>m.Username) </td>
+                <td> @Html.TextBoxFor(m=>m.Username,new { @required = "required" })</td>
+            </tr>
+            <tr>
+                <td> @Html.LabelFor(m=>m.Password) </td>
+                <td> @Html.PasswordFor(m=>m.Password,new { @required = "required" })</td>
+            </tr>
 
 
-		<tr>
-			<td> @Html.LabelFor(m=>m.Username) </td> <td> @Html.TextBoxFor(m=>m.Username,new { @required = "required" })</td>
-		</tr>
 
-		<tr>
-			<td> @Html.LabelFor(m => m.Gender) </td>
-			<td>
-				@Html.DropDownListFor(m => m.Gender, new List<SelectListItem>
-					{
-						new SelectListItem { Text = "Male", Value = "Male" },
-                        new SelectListItem { Text = "Female", Value = "Female" }
+
+            <tr>
+                <td> @Html.LabelFor(m => m.Gender) </td>
+                <td>
+                    @Html.DropDownListFor(m => m.Gender, new List<SelectListItem>
+                    {
+                    new SelectListItem { Text = "Male", Value = "Male" },
+                    new SelectListItem { Text = "Female", Value = "Female" }
                     }, "Select Gender",new { @required = "required" })
-            </td>
-		</tr>
+                </td>
+            </tr>
 
 
-		<div class="form-group">
-                <input type="submit" value="Signup" class="btn btn-primary" />
+            
+        </table>
+        <div class="form-group">
+            <input type="submit" value="Signup" class="btn btn-primary" />
         </div>
-	</table>
-
-	@Html.Raw(TempData["Msg"])
-
-</Form>
+        @Html.Raw(TempData["Msg"])
+    </form>
+</body>
+</html>

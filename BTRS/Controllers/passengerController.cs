@@ -116,7 +116,7 @@ namespace BTRS.Controllers
             }
             else
             {
-                TempData["Msg"] = "Invalid username or password";
+                TempData["Msg"] = "There Are No Account Registered With This Username And Password,Please SignUp first!";
             }
             
 
