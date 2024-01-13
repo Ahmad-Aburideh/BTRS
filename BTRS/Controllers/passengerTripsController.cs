@@ -62,7 +62,7 @@ namespace BTRS.Controllers
             {
                 
                 TempData["Message"] = "You have already booked this trip.";
-                return RedirectToAction("Index", "bookingTrips");
+                return RedirectToAction("Index", "passengerTrips");
             }
 
             

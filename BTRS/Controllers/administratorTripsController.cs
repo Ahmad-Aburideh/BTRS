@@ -32,13 +32,14 @@ namespace BTRS.Controllers
             {
                 return NotFound();
             }
-
+            
             var trip = await _context.trip
                 .FirstOrDefaultAsync(m => m.TripID == id);
             if (trip == null)
             {
                 return NotFound();
             }
+
 
             return View(trip);
         }
@@ -115,7 +116,7 @@ namespace BTRS.Controllers
             }
             
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index","administratorTrips");
         }
 
         private bool tripExists(int id)
