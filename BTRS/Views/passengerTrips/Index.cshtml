@@ -63,8 +63,18 @@
         background-color: darkblue;
         }
 
+    a.view-link {
+        background-color: green;
+        color: white;
+        padding: 6px 12px;
+        margin-right: 5px;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+
     a.logout-link {
-        background-color: #ff0000; 
+        background-color: #ff0000;
         color: white;
         padding: 6px 12px;
         margin-right: 5px;
@@ -121,6 +131,7 @@
 }
     </tbody>
 </table>
+<a asp-action="View_Book" class="view-link">View Your Booking Schedule</a>
 <a asp-action="LogOut" class="logout-link">Logout</a>
 @Html.Raw(TempData["Message"])
 

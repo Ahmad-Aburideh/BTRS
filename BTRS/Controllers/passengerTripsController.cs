@@ -84,6 +84,10 @@ namespace BTRS.Controllers
         {
             return RedirectToAction("passengerHome", "passenger");
         }
+        public IActionResult View_Book()
+        {
+            return RedirectToAction("Index", "bookingTrips");
+        }
 
 
     }

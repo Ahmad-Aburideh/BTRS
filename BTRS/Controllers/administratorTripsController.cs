@@ -123,5 +123,10 @@ namespace BTRS.Controllers
         {
           return (_context.trip?.Any(e => e.TripID == id)).GetValueOrDefault();
         }
+
+        public IActionResult LogOut()
+        {
+            return RedirectToAction("adminHome", "administrator");
+        }
     }
 }

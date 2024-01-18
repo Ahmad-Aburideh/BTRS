@@ -31,6 +31,7 @@
                 text-decoration: underline;
             }
 
+  
 </style>
 <style>
 
@@ -54,18 +55,39 @@
     .table a.edit-link {
         background-color: cadetblue;
     }
+
+    
     .table a.delete-link {
         background-color: red;
     }
+</style>
 
-        
+<style>
+    .create-link {
+        background-color: cadetblue; 
+        padding: 6px 12px;
+        color: black;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+
+    a.logout-link {
+        background-color: #ff0000;
+        color: white;
+        padding: 6px 12px;
+        margin-right: 5px;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
 
 </style>
 <h1>Administrator Trips</h1>
-
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="create-link">Create New</a>
 </p>
+    
 <table class="table">
     <thead>
         <tr>
@@ -114,3 +136,4 @@
 }
     </tbody>
 </table>
+<a asp-action="LogOut" class="logout-link">Logout</a>

@@ -88,7 +88,7 @@ namespace BTRS.Controllers
             }
             else
             {
-                TempData["Msg"] = "Invalid username or password";
+                TempData["Msg"] = "Invalid Username or Password,Please Signup First!";
             }
             return View(admin2);
         }
